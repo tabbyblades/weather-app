@@ -69,6 +69,12 @@ function getCurrent(Response) {
   let temperature = Math.round(Response.data.main.temp);
   let temperatureElement = document.querySelector("#temp");
   temperatureElement.innerHTML = `${temperature}°C`;
+  let wind = Math.round(Response.data.wind.speed);
+    let windElement = document.querySelector("#wind");
+    windElement.innerHTML = `${wind} m/s`;
+    let humidity = Math.round(Response.data.main.humidity);
+    let humidityElement = document.querySelector("#humidity");
+    humidityElement.innerHTML = `${humidity}%`;
 }
 
 function clickButton(event) {
