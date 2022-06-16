@@ -2,7 +2,7 @@
     font-family: "Poppins", sans-serif;
     border: solid 5px #ff5468;
     border-radius: 25px;
-    max-height: 630px;
+    max-height: 650px;
     margin: 10px auto;
     max-width: 680px;
   }
@@ -20,6 +20,9 @@
     max-width: 250px;
   }
   
+  .links{
+    font-size: 13px;
+  }
   .today-temp {
     color: #ff5468;
     font-size: 50px;
