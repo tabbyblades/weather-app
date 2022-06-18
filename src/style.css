@@ -2,7 +2,7 @@
     font-family: "Poppins", sans-serif;
     border: solid 5px #ff5468;
     border-radius: 25px;
-    max-height: 650px;
+    max-height: 655px;
     margin: 10px auto;
     max-width: 680px;
   }
@@ -22,6 +22,8 @@
   
   .links{
     font-size: 13px;
+    position: relative;
+    top: 10px;
   }
   .today-temp {
     color: #ff5468;
@@ -48,12 +50,16 @@
     color: white;
     border-color: white;
     border-radius: 25px;
+    position: relative;
+    left: 63px;
   }
   
   .form-control {
     border-color: #ff5468;
     border-radius: 25px;
     width: 50%;
+    position: relative;
+    left: 63px;
   }
   
   .btn:hover {
