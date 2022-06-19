@@ -118,3 +118,7 @@
     opacity: 85%;
     transition: all ease-in-out 200ms;
   }
+
+.links a {
+  text-decoration: none;
+}
