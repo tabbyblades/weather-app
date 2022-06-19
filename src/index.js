@@ -37,7 +37,7 @@ function search(event) {
     console.log(Response.data);
     let temperature = Math.round(Response.data.main.temp);
     let temperatureElement = document.querySelector("#temp");
-    temperatureElement.innerHTML = `${temperature}°C`;
+    temperatureElement.innerHTML = `${temperature}`;
     let wind = Math.round(Response.data.wind.speed);
     let windElement = document.querySelector("#wind");
     windElement.innerHTML = `${wind} m/s`;
@@ -68,7 +68,7 @@ function getCurrent(Response) {
   h1.innerHTML = `${Response.data.name}`;
   let temperature = Math.round(Response.data.main.temp);
   let temperatureElement = document.querySelector("#temp");
-  temperatureElement.innerHTML = `${temperature}°C`;
+  temperatureElement.innerHTML = `${temperature}`;
   let wind = Math.round(Response.data.wind.speed);
     let windElement = document.querySelector("#wind");
     windElement.innerHTML = `${wind} m/s`;

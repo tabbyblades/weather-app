@@ -52,6 +52,7 @@
     border-radius: 25px;
     position: relative;
     left: 63px;
+
   }
   
   .form-control {
@@ -69,6 +70,18 @@
     opacity: 85%;
     transition: all ease-in-out 200ms;
   }
+
+  .units {
+    font-size: 20px;
+    position: relative;
+    top: -22px;
+    
+  }
+
+  .units a {
+    text-decoration: none;
+  }
+
   .row {
     position: relative;
     bottom: 255px;
