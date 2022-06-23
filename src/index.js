@@ -46,6 +46,9 @@ function search(event) {
     humidityElement.innerHTML = `${humidity}%`;
     let h1 = document.querySelector("h1");
     h1.innerHTML = `${Response.data.name}`;
+    let icon = Response.data.weather[0].icon;
+    let iconElement = document.querySelector("#icon");
+    iconElement.setAttribute("src",`src/${icon}.svg`);
   }
   axios.get(apiUrl).then(showTemperature);
 }
