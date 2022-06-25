@@ -34,7 +34,6 @@ function search(event) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}&units=metric`;
 
   function showTemperature(Response) {
-    console.log(Response.data);
     let temperature = Math.round(Response.data.main.temp);
     let temperatureElement = document.querySelector("#temp");
     temperatureElement.innerHTML = `${temperature}`;
@@ -48,7 +47,7 @@ function search(event) {
     h1.innerHTML = `${Response.data.name}`;
     let icon = Response.data.weather[0].icon;
     let iconElement = document.querySelector("#icon");
-    iconElement.setAttribute("src",`src/${icon}.svg`);
+    iconElement.setAttribute("src",`images/${icon}.svg`);
   }
   axios.get(apiUrl).then(showTemperature);
 }
@@ -67,6 +66,7 @@ function showPosition(position) {
 }
 
 function getCurrent(Response) {
+  console.log(Response.data);
   let h1 = document.querySelector("h1");
   h1.innerHTML = `${Response.data.name}`;
   let temperature = Math.round(Response.data.main.temp);
@@ -78,6 +78,9 @@ function getCurrent(Response) {
     let humidity = Math.round(Response.data.main.humidity);
     let humidityElement = document.querySelector("#humidity");
     humidityElement.innerHTML = `${humidity}%`;
+    let icon = Response.data.weather[0].icon;
+    let iconElement = document.querySelector("#icon");
+    iconElement.setAttribute("src",`images/${icon}.svg`);
 }
 
 function clickButton(event) {
