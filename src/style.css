@@ -80,6 +80,8 @@
 
   .units a {
     text-decoration: none;
+    color: #ff5468;
+
   }
 
   .row {
@@ -121,4 +123,5 @@
 
 .links a {
   text-decoration: none;
+
 }

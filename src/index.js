@@ -48,6 +48,9 @@ function search(event) {
     let icon = Response.data.weather[0].icon;
     let iconElement = document.querySelector("#icon");
     iconElement.setAttribute("src",`images/${icon}.svg`);
+    celsiusTemperature = Response.data.main.temp;
+   
+
   }
   axios.get(apiUrl).then(showTemperature);
 }
@@ -66,7 +69,6 @@ function showPosition(position) {
 }
 
 function getCurrent(Response) {
-  console.log(Response.data);
   let h1 = document.querySelector("h1");
   h1.innerHTML = `${Response.data.name}`;
   let temperature = Math.round(Response.data.main.temp);
@@ -81,6 +83,8 @@ function getCurrent(Response) {
     let icon = Response.data.weather[0].icon;
     let iconElement = document.querySelector("#icon");
     iconElement.setAttribute("src",`images/${icon}.svg`);
+    celsiusTemperature = Response.data.main.temp;
+    
 }
 
 function clickButton(event) {
@@ -89,3 +93,23 @@ function clickButton(event) {
 }
 let currentButton = document.querySelector("#currentButton");
 currentButton.addEventListener("click", clickButton);
+
+
+function showFahrenheitTemperature(event){
+  event.preventDefault();
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  let temperatureElement = document.querySelector("#temp");
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+let fahrenheitLink = document.querySelector("#fahren-link");
+fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
+
+let celsiusTemperature = null;
+
+function showCelsiusTemperature(event){
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temp");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", showCelsiusTemperature); 
