@@ -21,7 +21,7 @@ if (minutes < 10) {
   minutes = `0${minutes}`;
 }
 
-let h2 = document.querySelector("h2");
+let h2 = document.querySelector("#h2");
 h2.innerHTML = `${day} ${hours}:${minutes}`;
 
 function search(event) {
@@ -49,6 +49,8 @@ function search(event) {
     let iconElement = document.querySelector("#icon");
     iconElement.setAttribute("src",`images/${icon}.svg`);
     celsiusTemperature = Response.data.main.temp;
+    let description = document.querySelector("#description");
+    description.innerHTML = `${Response.data.weather[0].description}`;
    
 
   }
@@ -84,6 +86,8 @@ function getCurrent(Response) {
     let iconElement = document.querySelector("#icon");
     iconElement.setAttribute("src",`images/${icon}.svg`);
     celsiusTemperature = Response.data.main.temp;
+    let description = document.querySelector("#description");
+    description.innerHTML = `${Response.data.weather[0].description}`;
     
 }
 
