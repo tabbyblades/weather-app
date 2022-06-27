@@ -86,7 +86,7 @@
 
   .row {
     position: relative;
-    bottom: 255px;
+    bottom: 270px;
     text-align: center;
     font-size: 15px;
     font-weight: 300px;
@@ -123,5 +123,6 @@
 
 .links a {
   text-decoration: none;
+  
 
 }
