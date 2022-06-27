@@ -32,6 +32,8 @@ function search(event) {
 
   let apiKey = "5c947bc6651bd71d8bfa87bd7568e05f";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showTemperature);}
+
 
   function showTemperature(Response) {
     let temperature = Math.round(Response.data.main.temp);
@@ -51,10 +53,17 @@ function search(event) {
     celsiusTemperature = Response.data.main.temp;
     let description = document.querySelector("#description");
     description.innerHTML = `${Response.data.weather[0].description}`;
-   
-
+    getForecast(Response.data.coord);
   }
-  axios.get(apiUrl).then(showTemperature);
+
+function getForecast(coordinates){
+  let apiKey = "5c947bc6651bd71d8bfa87bd7568e05f";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
+function displayForecast(Response){
+console.log(Response.data.daily);
 }
 
 let searchForm = document.querySelector("#searchForm");
