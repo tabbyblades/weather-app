@@ -59,10 +59,11 @@ function search(event) {
 function getForecast(coordinates){
   let apiKey = "5c947bc6651bd71d8bfa87bd7568e05f";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-  //axios.get(apiUrl).then(displayForecast);
+  axios.get(apiUrl).then(displayForecast);
 }
 
-function displayForecast(){
+function displayForecast(Response){
+  console.log(Response.data.daily);
 let forecastElement = document.querySelector("#forecast");
 let forecastHTML = `<div class = "row">`;
 let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri"];
@@ -75,10 +76,10 @@ forecastHTML = forecastHTML + `<div class="col-2">
 </div>
 </div>
 </div>`
-forecastElement.innerHTML = forecastHTML;})
+;});
+forecastHTML = forecastHTML + `</div>`;
+forecastElement.innerHTML = forecastHTML;
 }
-
-displayForecast();
 
 let searchForm = document.querySelector("#searchForm");
 searchForm.addEventListener("submit", search);
