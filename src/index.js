@@ -24,15 +24,17 @@ if (minutes < 10) {
 let h2 = document.querySelector("#h2");
 h2.innerHTML = `${day} ${hours}:${minutes}`;
 
-function search(event) {
-  event.preventDefault();
-  let searchInput = document.querySelector("#search-input");
-
-  let location = searchInput.value;
-
+function search(location) {
   let apiKey = "5c947bc6651bd71d8bfa87bd7568e05f";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showTemperature);}
+
+  function handleSubmit(event){
+    event.preventDefault();
+  let searchInput = document.querySelector("#search-input");
+  search(searchInput.value);}
+
+  search("edinburgh");
 
 
   function showTemperature(Response) {
@@ -82,7 +84,7 @@ forecastElement.innerHTML = forecastHTML;
 }
 
 let searchForm = document.querySelector("#searchForm");
-searchForm.addEventListener("submit", search);
+searchForm.addEventListener("submit", handleSubmit);
 
 function showPosition(position) {
   let lat = position.coords.latitude;
