@@ -64,21 +64,33 @@ function getForecast(coordinates){
   axios.get(apiUrl).then(displayForecast);
 }
 
+
+function formatDay(timestamp){
+let date = new Date (timestamp * 1000);
+let day = date.getDay();
+let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+return days [day];
+}
+
 function displayForecast(Response){
   console.log(Response.data.daily);
 let forecastElement = document.querySelector("#forecast");
 let forecastHTML = `<div class = "row">`;
-let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri"];
-days.forEach(function(day){
+let forecast = Response.data.daily;
+forecast.forEach(function(forecastDay,index){
+  //let forecastIcon = forecastDay.weather[0].icon;
+//let forecastIconElement = document.querySelector("#forecast-icon");
+//forecastIconElement.setAttribute("src",`images/${forecastIcon}.svg`);
+  if (index < 6){
 forecastHTML = forecastHTML + `<div class="col-2"> 
 <div class="card h-100">
-<img src="images/01d.svg" class="card-img-top" alt="sunny">
+<img src="images/01d.svg" class="card-img-top" id="forecast-icon">
 <div class="card-body">
-<p class="card-text"> <strong>${day} </strong><br/> 8°C  </p>
+<p class="card-text"> <strong>${formatDay(forecastDay.dt)} </strong><br/> ${Math.round(forecastDay.temp.day)}°C  </p>
 </div>
 </div>
 </div>`
-;});
+;}});
 forecastHTML = forecastHTML + `</div>`;
 forecastElement.innerHTML = forecastHTML;
 }
