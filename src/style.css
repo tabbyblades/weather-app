@@ -19,11 +19,23 @@
     top: -38px;
     max-width: 250px;
   }
+
+  .description{
+    position: relative;
+    top: 8px;
+  }
   
+  .icon{
+    position: relative;
+    right: -11px;
+    top: -9px;
+  }
+
   .links{
     font-size: 13px;
     position: relative;
-    top: -278px;
+    top: -235px;
+    right: -17px;
   }
   .today-temp {
     color: #ff5468;
@@ -76,6 +88,7 @@
     position: relative;
     top: -22px;
     
+    
   }
 
   .units a {
@@ -86,7 +99,8 @@
 
   .row {
     position: relative;
-    bottom: 155px;
+    bottom: 133px;
+    right: -6px;
     text-align: center;
     font-size: 15px;
     font-weight: 300px;

@@ -54,7 +54,7 @@ function search(location) {
     iconElement.setAttribute("src",`images/${icon}.svg`);
     celsiusTemperature = Response.data.main.temp;
     let description = document.querySelector("#description");
-    description.innerHTML = `${Response.data.weather[0].description}`;
+    description.innerHTML = `${Response.data.weather[0].main}`;
     getForecast(Response.data.coord);
   }
 
@@ -122,7 +122,7 @@ function getCurrent(Response) {
     iconElement.setAttribute("src",`images/${icon}.svg`);
     celsiusTemperature = Response.data.main.temp;
     let description = document.querySelector("#description");
-    description.innerHTML = `${Response.data.weather[0].description}`;
+    description.innerHTML = `${Response.data.weather[0].main}`;
     
 }
 
