@@ -78,13 +78,10 @@ let forecastElement = document.querySelector("#forecast");
 let forecastHTML = `<div class = "row">`;
 let forecast = Response.data.daily;
 forecast.forEach(function(forecastDay,index){
-  //let forecastIcon = forecastDay.weather[0].icon;
-//let forecastIconElement = document.querySelector("#forecast-icon");
-//forecastIconElement.setAttribute("src",`images/${forecastIcon}.svg`);
   if (index < 6){
 forecastHTML = forecastHTML + `<div class="col-2"> 
 <div class="card h-100">
-<img src="images/01d.svg" class="card-img-top" id="forecast-icon">
+<img src="./images/${forecastDay.weather[0].icon}.svg" width="80" class="card-img-top" id="forecast-icon"/>
 <div class="card-body">
 <p class="card-text"> <strong>${formatDay(forecastDay.dt)} </strong><br/> ${Math.round(forecastDay.temp.day)}°C  </p>
 </div>

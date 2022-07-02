@@ -23,7 +23,7 @@
   .links{
     font-size: 13px;
     position: relative;
-    top: -229px;
+    top: -278px;
   }
   .today-temp {
     color: #ff5468;
@@ -86,7 +86,7 @@
 
   .row {
     position: relative;
-    bottom: 135px;
+    bottom: 155px;
     text-align: center;
     font-size: 15px;
     font-weight: 300px;
